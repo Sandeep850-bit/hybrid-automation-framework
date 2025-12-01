@@ -1,6 +1,7 @@
 package com.automation.core;
 
 import com.automation.config.TestConfiguration;
+import com.automation.constants.AppConstant;
 import com.automation.driver.DriverFactory;
 import com.automation.mcp.McpClient;
 import com.microsoft.playwright.Locator;
@@ -152,7 +153,7 @@ public class Operation {
      * Wait for loading spinner to disappear (implicit wait)
      */
     @Step("Wait for spinner to disappear")
-    public static void waitForSpinnerDisAppear() {
+    public static void waitForSpinnerDisappear() {
         try {
             logger.info("→ Waiting for spinner to disappear");
             
@@ -160,7 +161,7 @@ public class Operation {
                 Page page = DriverFactory.getPage();
                 page.waitForTimeout(1000); // Brief wait to ensure spinner appears
                 
-                Locator spinner = getLocator("loadingSpinner");
+                Locator spinner = getLocator(AppConstant.LOADING_SPINNER);
                 try {
                     spinner.waitFor(new Locator.WaitForOptions().setTimeout(config.getImplicitWait()));
                     logger.info("✓ Spinner disappeared");
