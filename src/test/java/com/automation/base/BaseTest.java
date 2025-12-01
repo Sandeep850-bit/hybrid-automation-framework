@@ -3,7 +3,7 @@ package com.automation.base;
 import com.automation.config.TestConfiguration;
 import com.automation.driver.DriverFactory;
 import com.automation.listeners.AllureLifecycleConfig;
-import com.automation.mcp.McpClient;
+import com.microsoft.playwright.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestContext;
@@ -132,9 +132,9 @@ public class BaseTest {
 
     /**
      * Helper method to get current page
-     * Use: DriverFactory.getPage() or create a getter in subclass
+     * Use: getPage() or DriverFactory.getPage()
      */
-    protected static com.microsoft.playwright.Page getPage() {
+    protected Page getPage() {
         return DriverFactory.getPage();
     }
 }
