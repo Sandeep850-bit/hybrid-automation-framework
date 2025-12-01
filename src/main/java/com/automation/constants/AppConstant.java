@@ -9,6 +9,9 @@ package com.automation.constants;
  * - Provides a single source of truth for locator keys
  * - Reduces hardcoding and improves maintainability
  * - Enables IDE autocomplete for locator references
+ * 
+ * NOTE: Test data constants have been moved to testdata.properties for better maintainability.
+ *       Use TestConfiguration.getInstance().getValidUsername(), etc. to access test data.
  */
 public class AppConstant {
 
@@ -39,12 +42,6 @@ public class AppConstant {
     public static final String ERROR_NOTIFICATION = "errorNotification";
     public static final String WARNING_NOTIFICATION = "warningNotification";
     public static final String INFO_NOTIFICATION = "infoNotification";
-
-    // ========== TEST DATA CONSTANTS ==========
-    public static final String VALID_USERNAME = "superuser@sks";
-    public static final String VALID_PASSWORD = "Welcome1";
-    public static final String INVALID_USERNAME = "invalid@test.com";
-    public static final String INVALID_PASSWORD = "wrongpass";
 
     // ========== TIMEOUT CONSTANTS (in milliseconds) ==========
     public static final int DEFAULT_TIMEOUT = 10000;
